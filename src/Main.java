@@ -66,7 +66,13 @@ public class Main {
                         System.out.println(ultimosPedidos.get(i));
                     }
                     break;
-
+                case 6:
+                    System.out.println("\nOperação Finalizada.");
+                    operacao = false;
+                    break;
+                default:
+                    System.out.println("\nOpção invalida.\nTente Novamente.");
+                    break;
             }
 
 
