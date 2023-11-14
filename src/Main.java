@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         LinkedList<Produtos> pedidos = new LinkedList<>();
+        LinkedList<Produtos> ultimosPedidos = new LinkedList<>();
 
         Bebida b1 = new Bebida("Coca-Cola Zero",3.50);
         Bebida b2 = new Bebida("Coca-Cola",3.25);
@@ -38,9 +39,21 @@ public class Main {
                     }
                     break;
                 case 4:
+                    System.out.println("Último pedido entregue !!!");
+                    ultimosPedidos.addFirst(pedidos.getFirst());
+                    pedidos.removeFirst();
+                    for (int i = 0; i < pedidos.size(); i++) {
+                        System.out.println("Pedido + " + (i+1));
+                        System.out.println(pedidos.get(i));
+                    }
                     break;
                 case 5:
+                    for (int i = 0; i < ultimosPedidos.size(); i++) {
+                        System.out.println("Pedido + " + (i+1));
+                        System.out.println(ultimosPedidos.get(i));
+                    }
                     break;
+
             }
 
 
