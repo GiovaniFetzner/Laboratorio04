@@ -32,8 +32,9 @@ public class Main {
                 case 2:
                     break;
                 case 3:
-                    for (Produtos p: pedidos) {
-                        System.out.println(pedidos);
+                    for (int i = 0; i < pedidos.size(); i++) {
+                        System.out.println("Pedido + " + (i+1));
+                        System.out.println(pedidos.get(i));
                     }
                     break;
                 case 4:
