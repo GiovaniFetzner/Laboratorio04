@@ -1,5 +1,10 @@
+import java.util.LinkedList;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+
+        LinkedList<Produtos> pedidos = new LinkedList<>();
 
         Bebida b1 = new Bebida("Coca-Cola Zero",3.50);
         Bebida b2 = new Bebida("Coca-Cola",3.25);
@@ -17,11 +22,29 @@ public class Main {
 
         System.out.println("Bem vindo ao *Sua Felicidado no Meio do Pão*");
 
-
         while (operacao){
+            Scanner leitura = new Scanner(System.in);
             System.out.println("Menu da Operação\n1. Cardapio\n2. Menu Pedido\n3. Mostrar Fila\n4. Menu Entrga\n 5. Sair");
+            int opcao = leitura.nextInt();
+            switch (opcao){
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    for (Produtos p: pedidos) {
+                        System.out.println(pedidos);
+                    }
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+            }
+
 
         }
+
 
 
     }
