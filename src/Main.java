@@ -19,7 +19,7 @@ public class Main {
 
 
         while (operacao){
-            System.out.println("Menu da op");
+            System.out.println("Menu da Operação\n1. Cardapio\n2. Menu Pedido\n3. Mostrar Fila\n4. Menu Entrga\n 5. Sair");
 
         }
 
