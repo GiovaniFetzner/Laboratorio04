@@ -17,4 +17,9 @@ public class Bebida {
     public void setValor(double valor) {
         this.valor = valor;
     }
+
+    public Bebida(String nome, double valor) {
+        this.nome = nome;
+        this.valor = valor;
+    }
 }

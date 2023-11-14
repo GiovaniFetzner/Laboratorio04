@@ -18,4 +18,9 @@ public class Sanduiche {
     public void setValor(double valor) {
         this.valor = valor;
     }
+
+    public Sanduiche(String nome, double valor) {
+        this.nome = nome;
+        this.valor = valor;
+    }
 }

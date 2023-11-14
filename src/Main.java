@@ -1,39 +1,28 @@
-import java.util.LinkedList;
-
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
 
-        LinkedList<String> pedidos = new LinkedList<>();
-        LinkedList<String> pedidosdois = new LinkedList<>();
-        pedidos.add("Salame mingue");
-        pedidos.add("Sorvete colore");
-        pedidos.add("TESTESEESETE");
+        Bebida b1 = new Bebida("Coca-Cola Zero",3.50);
+        Bebida b2 = new Bebida("Coca-Cola",3.25);
+        Bebida b3 = new Bebida("Fruki",2.25);
+        Bebida b4 = new Bebida("Fruki Cola",3.00);
+        Bebida b5 = new Bebida("Pepsi",3.50);
+        Bebida b6 = new Bebida("Pepsi Black",3.75);
 
-        System.out.println("Lista:");
-        for (int i = 0; i < pedidos.size(); i++) {
-            System.out.println(pedidos.get(i));;
+        Sanduiche s1 = new Sanduiche("Frango Teriaki",27.80);
+        Sanduiche s2 = new Sanduiche("Carne Defumada",38.45);
+        Sanduiche s3 = new Sanduiche("Salmão com Cream Chesse",45.25);
+        Sanduiche s4 = new Sanduiche("Vegano",50.99);
+
+        boolean operacao = true;
+
+        System.out.println("Bem vindo ao *Sua Felicidado no Meio do Pão*");
+
+
+        while (operacao){
+            System.out.println("Menu da op");
+
         }
 
-        System.out.println();
-        System.out.println("primeiro " + pedidos.getFirst());
-        System.out.println("Ultimo " + pedidos.getLast());
-        System.out.println();
-        pedidosdois.addFirst(pedidos.getFirst());
-        pedidos.removeFirst();
-        pedidosdois.addFirst(pedidos.getFirst());
 
-        System.out.println("Lista de próximos pedidos:");
-        for (int i = 0; i < pedidos.size(); i++) {
-            System.out.println(pedidos.get(i));;
-        }
-
-        System.out.println();
-
-        System.out.println("Ultimo pedidos entregues:");
-        for (int i = 0; i < pedidosdois.size(); i++) {
-            System.out.println(pedidosdois.get(i));;
-        }
     }
 }
