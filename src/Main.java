@@ -25,10 +25,23 @@ public class Main {
 
         while (operacao){
             Scanner leitura = new Scanner(System.in);
-            System.out.println("Menu da Operação\n1. Cardapio\n2. Menu Pedido\n3. Mostrar Fila\n4. Menu Entrga\n 5. Sair");
+            System.out.println("\nMenu da Operação\n1. Cardapio\n2. Menu Pedido\n3. Mostrar Fila\n4. Entrgar\n5. Ultímas Entregas\n6. Sair");
             int opcao = leitura.nextInt();
             switch (opcao){
                 case 1:
+                    System.out.println("*SANDUÍCHES*");
+                    System.out.println("1. " + b1.getNome() + "------------ R$ " + b1.getValor());
+                    System.out.println("2. " + b2.getNome() + "------------ R$ " + b2.getValor());
+                    System.out.println("3. " + b3.getNome() + "------------ R$ " + b3.getValor());
+                    System.out.println("4. " + b4.getNome() + "------------ R$ " + b4.getValor());
+                    System.out.println("5. " + b5.getNome() + "------------ R$ " + b5.getValor());
+                    System.out.println("6. " + b6.getNome() + "------------ R$ " + b6.getValor());
+                    System.out.println("__________________________");
+                    System.out.println("*BEBIDAS*");
+                    System.out.println("7. " + s1.getNome() + "------------ R$ " + s1.getValor());
+                    System.out.println("8. " + s2.getNome() + "------------ R$ " + s2.getValor());
+                    System.out.println("9. " + s3.getNome() + "------------ R$ " + s3.getValor());
+                    System.out.println("10. " + s4.getNome() + "------------ R$ " + s4.getValor());
                     break;
                 case 2:
                     break;
