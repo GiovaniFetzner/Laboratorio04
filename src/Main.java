@@ -29,21 +29,17 @@ public class Main {
             int opcao = leitura.nextInt();
             switch (opcao){
                 case 1:
-                    System.out.println("*SANDUÍCHES*");
-                    System.out.println("1. " + b1.getNome() + "------------ R$ " + b1.getValor());
-                    System.out.println("2. " + b2.getNome() + "------------ R$ " + b2.getValor());
-                    System.out.println("3. " + b3.getNome() + "------------ R$ " + b3.getValor());
-                    System.out.println("4. " + b4.getNome() + "------------ R$ " + b4.getValor());
-                    System.out.println("5. " + b5.getNome() + "------------ R$ " + b5.getValor());
-                    System.out.println("6. " + b6.getNome() + "------------ R$ " + b6.getValor());
+                    mostrarBebidas(b1, b2, b3, b4, b5, b6);
                     System.out.println("__________________________");
-                    System.out.println("*BEBIDAS*");
-                    System.out.println("7. " + s1.getNome() + "------------ R$ " + s1.getValor());
-                    System.out.println("8. " + s2.getNome() + "------------ R$ " + s2.getValor());
-                    System.out.println("9. " + s3.getNome() + "------------ R$ " + s3.getValor());
-                    System.out.println("10. " + s4.getNome() + "------------ R$ " + s4.getValor());
+                    mostrarSanduiches(s1, s2, s3, s4);
                     break;
                 case 2:
+                    System.out.println("Menu de pedido\n1.Adicionar Sanduiche\n2.Adicionar Bebida\n3.Sair");
+                    int opcaoPedido = leitura.nextInt();
+                    subMenuPedidos(opcaoPedido);
+
+                    Produtos novoPedido = new Produtos();
+
                     break;
                 case 3:
                     for (int i = 0; i < pedidos.size(); i++) {
@@ -80,5 +76,39 @@ public class Main {
 
 
 
+    }
+
+    private static void subMenuPedidos(int opcaoPedido) {
+        //System.out.println("Menu de pedido\n1.Adicionar Sanduiche\n2.Adicionar Bebida\n3.Sair");
+        switch (opcaoPedido){
+            case 1:
+                //mostrarSanduiches(s1,s2,s3,s4);
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            default:
+                System.out.println("Opção incorreta, tente novamente");
+                break;
+        }
+    }
+
+    private static void mostrarSanduiches(Sanduiche s1, Sanduiche s2, Sanduiche s3, Sanduiche s4) {
+        System.out.println("*SANDUÍCHES*");
+        System.out.println("7. " + s1.getNome() + "------------ R$ " + s1.getValor());
+        System.out.println("8. " + s2.getNome() + "------------ R$ " + s2.getValor());
+        System.out.println("9. " + s3.getNome() + "------------ R$ " + s3.getValor());
+        System.out.println("10. " + s4.getNome() + "------------ R$ " + s4.getValor());
+    }
+
+    private static void mostrarBebidas(Bebida b1, Bebida b2, Bebida b3, Bebida b4, Bebida b5, Bebida b6) {
+        System.out.println("*BEBIDAS*");
+        System.out.println("1. " + b1.getNome() + "------------ R$ " + b1.getValor());
+        System.out.println("2. " + b2.getNome() + "------------ R$ " + b2.getValor());
+        System.out.println("3. " + b3.getNome() + "------------ R$ " + b3.getValor());
+        System.out.println("4. " + b4.getNome() + "------------ R$ " + b4.getValor());
+        System.out.println("5. " + b5.getNome() + "------------ R$ " + b5.getValor());
+        System.out.println("6. " + b6.getNome() + "------------ R$ " + b6.getValor());
     }
 }

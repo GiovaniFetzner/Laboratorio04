@@ -7,6 +7,11 @@ public class Produtos {
 
     private double total;
 
+    public Produtos() {
+        this.bebidas = bebidas;
+        this.sanduiches = sanduiches;
+    }
+
     public Produtos(ArrayList<Bebida> bebidas, ArrayList<Sanduiche> sanduiches) {
         this.bebidas = bebidas;
         this.sanduiches = sanduiches;
