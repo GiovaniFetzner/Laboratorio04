@@ -1,3 +1,4 @@
+/*
 public class Bebida {
     private String nome;
     private double valor;
@@ -23,3 +24,4 @@ public class Bebida {
         this.valor = valor;
     }
 }
+*/
