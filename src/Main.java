@@ -30,10 +30,11 @@ public class Main {
             int opcao = leitura.nextInt();
             switch (opcao){
                 case 1: // Apresentar cardápio
-                    cardapio.getListaProdutos(Categoria.Bebida);
+                    System.out.println(cardapio.getListaProdutos(Categoria.Bebida));
+
                     //mostrarBebidas(b1, b2, b3, b4, b5, b6);
                     System.out.println("__________________________");
-                    cardapio.getListaProdutos(Categoria.Sanduiche);
+                    System.out.println(cardapio.getListaProdutos(Categoria.Sanduiche));
                     //mostrarSanduiches(s1, s2, s3, s4);
                     break;
                 case 2: // Apresentar Menu
@@ -82,21 +83,28 @@ public class Main {
 
     }
 
-/*    private static void subMenuPedidos(int opcaoPedido) {
-        //System.out.println("Menu de pedido\n1.Adicionar Sanduiche\n2.Adicionar Bebida\n3.Sair");
-        switch (opcaoPedido){
-            case 1:
-                //mostrarSanduiches(s1,s2,s3,s4);
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            default:
-                System.out.println("Opção incorreta, tente novamente");
-                break;
+    private static void subMenuPedidos(Cardapio cardapio, int opcaoPedido) {
+        System.out.println("Menu de pedido\n1.Adicionar Sanduiche\n2.Adicionar Bebida\n3.Sair");
+        boolean sair = true;
+        while (sair){
+            switch (opcaoPedido){
+                case 1:
+                    cardapio.getListaProdutos(Categoria.Sanduiche);
+                    System.out.println("Informe o sanduíche desejado");
+                    break;
+                case 2:
+                    System.out.println("Informe a bebida desejada");
+                    cardapio.getListaProdutos(Categoria.Bebida);
+                    break;
+                case 3:
+                    sair = false;
+                    break;
+                default:
+                    System.out.println("Opção incorreta, tente novamente");
+                    break;
+            }
         }
-    }*/
+    }
 
   /*  private static void mostrarSanduiches(Sanduiche s1, Sanduiche s2, Sanduiche s3, Sanduiche s4) {
         System.out.println("*SANDUÍCHES*");

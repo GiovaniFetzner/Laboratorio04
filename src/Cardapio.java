@@ -6,6 +6,7 @@ public class Cardapio {
     private double total;
 
     public  Cardapio(){ // Construtor padrão com produtos pré-estabelecidos
+        produtos = new ArrayList<Produto>();
         produtos.add(new Produto("Coca-Cola Zero",3.50, Categoria.Bebida));
         produtos.add(new Produto("Coca-Cola",3.25, Categoria.Bebida));
         produtos.add(new Produto("Fruki",2.25, Categoria.Bebida));
