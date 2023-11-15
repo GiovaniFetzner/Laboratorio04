@@ -1,20 +1,20 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Produtos {
+public class Cardapio {
     private ArrayList <Bebida> bebidas;
     private ArrayList <Sanduiche> sanduiches;
+    private Produto[] produtos;
 
     private double total;
 
-    public Produtos() {
+    public Cardapio() {
         this.bebidas = bebidas;
         this.sanduiches = sanduiches;
     }
 
-    public Produtos(ArrayList<Bebida> bebidas, ArrayList<Sanduiche> sanduiches) {
-        this.bebidas = bebidas;
-        this.sanduiches = sanduiches;
+    public Cardapio(Produto[] produtos) {
+        this.produtos = produtos;
     }
 
     public double getTotal() {
