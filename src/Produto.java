@@ -1,11 +1,26 @@
 public class Produto {
     private String nome;
     private double valor;
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    private int id;
     private Categoria categoria;
 
-    public Produto(String nome, double valor, Categoria categoria) {
+    public Produto(String nome, double valor, int id, Categoria categoria) {
         this.nome = nome;
         this.valor = valor;
+        this.id = id;
         this.categoria = categoria;
     }
 
@@ -36,6 +51,7 @@ public class Produto {
     @Override
     public String toString() {
         return
+                id + ' ' +
                 nome + '\'' +
                 ", valor R$ " + valor;
     }

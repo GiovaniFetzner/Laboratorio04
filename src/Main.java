@@ -31,7 +31,6 @@ public class Main {
             switch (opcao){
                 case 1: // Apresentar cardápio
                     System.out.println(cardapio.getListaProdutos(Categoria.Bebida));
-
                     //mostrarBebidas(b1, b2, b3, b4, b5, b6);
                     System.out.println("__________________________");
                     System.out.println(cardapio.getListaProdutos(Categoria.Sanduiche));
