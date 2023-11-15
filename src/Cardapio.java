@@ -1,10 +1,9 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Cardapio {
     private ArrayList <Bebida> bebidas;
     private ArrayList <Sanduiche> sanduiches;
-    private Produto[] produtos;
+    private ArrayList<Produto> produtos;
 
     private double total;
 
@@ -13,7 +12,7 @@ public class Cardapio {
         this.sanduiches = sanduiches;
     }
 
-    public Cardapio(Produto[] produtos) {
+    public Cardapio(ArrayList<Produto> produtos) {
         this.produtos = produtos;
     }
 
@@ -25,32 +24,25 @@ public class Cardapio {
         this.total = total;
     }
 
-    public ArrayList<Bebida> getBebidas() {
-        return bebidas;
+    public ArrayList<Produto> getListaProdutos(Categoria categoria) {
+        ArrayList<Produto> lista = new ArrayList<>();
+        for (Produto produto: produtos){
+            if (produto.getCategoria() == Categoria.Bebida){
+                lista.add(produto);
+            }
+        }
+        return lista;
     }
 
     public ArrayList<Sanduiche> getSanduiches() {
         return sanduiches;
     }
 
-    public void adicionarBebida(Bebida bebida){
-        bebidas.add(bebida);
-    }
-    public void adicionarSanduiche(Sanduiche sanduiche){
-        sanduiches.add(sanduiche);
-    }
-
     public double total(){
         total = 0;
-
-        for (Bebida bebida: bebidas) {
-            total += bebida.getValor();
+        for (Produto produto: produtos) {
+            total += produto.getValor();
         }
-
-        for (Sanduiche sanduiche: sanduiches) {
-            total += sanduiche.getValor();
-        }
-
         return total;
     }
 
