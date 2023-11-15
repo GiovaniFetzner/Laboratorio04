@@ -26,7 +26,14 @@ public class Main {
 
         while (operacao){
             Scanner leitura = new Scanner(System.in);
-            System.out.println("\nMenu da Operação\n1. Cardapio\n2. Menu Pedido\n3. Mostrar Fila\n4. Entrgar\n5. Ultímas Entregas\n6. Sair");
+            System.out.println("\n" +
+                    "Menu da Operação\n" +
+                    "1. Cardapio\n" +
+                    "2. Menu Pedido\n" +
+                    "3. Mostrar Fila\n" +
+                    "4. Entregar\n" +
+                    "5. Ultímas Entregas\n" +
+                    "6. Sair");
             int opcao = leitura.nextInt();
             switch (opcao){
                 case 1: // Apresentar cardápio
@@ -37,12 +44,13 @@ public class Main {
                     //mostrarSanduiches(s1, s2, s3, s4);
                     break;
                 case 2: // Apresentar Menu
-                    System.out.println("Menu de pedido\n1.Adicionar Sanduiche\n2.Adicionar Bebida\n3.Sair");
-                    int opcaoPedido = leitura.nextInt();
-
-
-                    //subMenuPedidos(opcaoPedido);
-                    //Produto novoPedido = new Produto(); Adicionar produto somente com nome,preco e categoria
+                    /*System.out.println("Menu de pedido\n" +
+                            "1.Adicionar Sanduiche\n" +
+                            "2.Adicionar Bebida\n" +
+                            "3.Sair");*/
+                    //int opcaoPedido = leitura.nextInt();
+                    if (subMenuPedidos(cardapio)!= null)
+                        pedidos.add(subMenuPedidos(cardapio));
 
                     break;
                 case 3:
@@ -82,19 +90,27 @@ public class Main {
 
     }
 
-    private static void subMenuPedidos(Cardapio cardapio, int opcaoPedido) {
-        System.out.println("Menu de pedido\n1.Adicionar Sanduiche\n2.Adicionar Bebida\n3.Sair");
+    private static Produto subMenuPedidos(Cardapio cardapio) {
+        Scanner leitura = new Scanner(System.in);
+        int id;
         boolean sair = true;
         while (sair){
+            System.out.println("Menu de pedido\n" +
+                    "1.Adicionar Sanduiche\n" +
+                    "2.Adicionar Bebida\n" +
+                    "3.Sair");
+            int opcaoPedido = leitura.nextInt();
             switch (opcaoPedido){
                 case 1:
-                    cardapio.getListaProdutos(Categoria.Sanduiche);
-                    System.out.println("Informe o sanduíche desejado");
-                    break;
+                    System.out.println(cardapio.getListaProdutos(Categoria.Sanduiche));
+                    System.out.println("Informe o id do sanduíche desejado");
+                    id = leitura.nextInt();
+                    return cardapio.encontrarProduto(id);
                 case 2:
-                    System.out.println("Informe a bebida desejada");
-                    cardapio.getListaProdutos(Categoria.Bebida);
-                    break;
+                    System.out.println("Inform o id da bebida desejada");
+                    System.out.println(cardapio.getListaProdutos(Categoria.Bebida));
+                    id = leitura.nextInt();
+                    return cardapio.encontrarProduto(id);
                 case 3:
                     sair = false;
                     break;
@@ -103,6 +119,7 @@ public class Main {
                     break;
             }
         }
+        return null;
     }
 
   /*  private static void mostrarSanduiches(Sanduiche s1, Sanduiche s2, Sanduiche s3, Sanduiche s4) {

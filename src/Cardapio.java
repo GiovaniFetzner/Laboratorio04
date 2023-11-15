@@ -47,7 +47,7 @@ public class Cardapio {
     public ArrayList<Produto> getListaProdutos(Categoria categoria) {
         ArrayList<Produto> lista = new ArrayList<>();
         for (Produto produto: produtos){
-            if (produto.getCategoria() == Categoria.Bebida){
+            if (produto.getCategoria() == categoria){
                 lista.add(produto);
             }
         }
@@ -60,6 +60,14 @@ public class Cardapio {
             total += produto.getValor();
         }
         return total;
+    }
+
+    public Produto encontrarProduto(int id){
+        for (Produto produto: produtos)
+            if (produto.getId() == id) {
+                return produto;
+            }
+        return null;
     }
 
 }
