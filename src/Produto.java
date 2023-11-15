@@ -1,9 +1,9 @@
 public class Produto {
     private String nome;
-    private int valor;
+    private double valor;
     private Categoria categoria;
 
-    public Produto(String nome, int valor, Categoria categoria) {
+    public Produto(String nome, double valor, Categoria categoria) {
         this.nome = nome;
         this.valor = valor;
         this.categoria = categoria;
@@ -17,7 +17,7 @@ public class Produto {
         this.nome = nome;
     }
 
-    public int getValor() {
+    public double getValor() {
         return valor;
     }
 
