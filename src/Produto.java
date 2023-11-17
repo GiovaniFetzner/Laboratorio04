@@ -51,7 +51,7 @@ public class Produto {
     @Override
     public String toString() {
         return
-                id + ' ' +
+                id + "  " +
                 nome + '\'' +
                 ", valor R$ " + valor;
     }
