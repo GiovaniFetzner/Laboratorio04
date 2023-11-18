@@ -58,4 +58,7 @@ public class Cardapio {
         return null;
     }
 
+    public ArrayList<Produto> getProdutos() {
+        return produtos;
+    }
 }
