@@ -2,6 +2,13 @@ public class Produto {
     private String nome;
     private double valor;
 
+    public Produto(String nome, double valor, int id, Categoria categoria) {
+        this.nome = nome;
+        this.valor = valor;
+        this.id = id;
+        this.categoria = categoria;
+    }
+
     public void setValor(double valor) {
         this.valor = valor;
     }
@@ -13,16 +20,9 @@ public class Produto {
     public void setId(int id) {
         this.id = id;
     }
-
     private int id;
-    private Categoria categoria;
 
-    public Produto(String nome, double valor, int id, Categoria categoria) {
-        this.nome = nome;
-        this.valor = valor;
-        this.id = id;
-        this.categoria = categoria;
-    }
+    private Categoria categoria;
 
     public String getNome() {
         return nome;
