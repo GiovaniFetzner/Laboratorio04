@@ -4,21 +4,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        LinkedList<Produto> pedidos = new LinkedList<>();
-        LinkedList<Produto> ultimosPedidos = new LinkedList<>();
+        LinkedList<ItensPedido> pedidos = new LinkedList<>();
+        LinkedList<ItensPedido> ultimosPedidos = new LinkedList<>();
         Cardapio cardapio = new Cardapio();
-
-        /*Bebida b1 = new Bebida("Coca-Cola Zero",3.50);
-        Bebida b2 = new Bebida("Coca-Cola",3.25);
-        Bebida b3 = new Bebida("Fruki",2.25);
-        Bebida b4 = new Bebida("Fruki Cola",3.00);
-        Bebida b5 = new Bebida("Pepsi",3.50);
-        Bebida b6 = new Bebida("Pepsi Black",3.75);*/
-
-        /*Sanduiche s1 = new Sanduiche("Frango Teriaki",27.80);
-        Sanduiche s2 = new Sanduiche("Carne Defumada",38.45);
-        Sanduiche s3 = new Sanduiche("Salmão com Cream Chesse",45.25);
-        Sanduiche s4 = new Sanduiche("Vegano",50.99);*/
 
         boolean operacao = true;
 
@@ -38,10 +26,8 @@ public class Main {
             switch (opcao){
                 case 1: // Apresentar cardápio
                     System.out.println(cardapio.getListaProdutos(Categoria.Bebida));
-                    //mostrarBebidas(b1, b2, b3, b4, b5, b6);
                     System.out.println("__________________________");
                     System.out.println(cardapio.getListaProdutos(Categoria.Sanduiche));
-                    //mostrarSanduiches(s1, s2, s3, s4);
                     break;
                 case 2: // Apresentar Menu
                     /*System.out.println("Menu de pedido\n" +
@@ -50,7 +36,7 @@ public class Main {
                             "3.Sair");*/
                     //int opcaoPedido = leitura.nextInt();
                     if (subMenuPedidos(cardapio)!= null)
-                        pedidos.add(subMenuPedidos(cardapio));
+                        //pedidos.add(subMenuPedidos(cardapio));
 
                     break;
                 case 3:
