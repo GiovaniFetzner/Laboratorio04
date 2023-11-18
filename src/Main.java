@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -76,10 +77,14 @@ public class Main {
 
     }
 
-    private static Produto subMenuPedidos(Cardapio cardapio) {
+    private ItensPedido subMenuPedidos(Cardapio cardapio) {
+        ArrayList<Produto> produtos = new ArrayList<>();
         Scanner leitura = new Scanner(System.in);
         int id;
         boolean sair = true;
+
+        System.out.println("Informe o nome do responsável pelo pedido:");
+        String nome = leitura.nextLine();
         while (sair){
             System.out.println("Menu de pedido\n" +
                     "1.Adicionar Sanduiche\n" +
@@ -91,12 +96,14 @@ public class Main {
                     System.out.println(cardapio.getListaProdutos(Categoria.Sanduiche));
                     System.out.println("Informe o id do sanduíche desejado");
                     id = leitura.nextInt();
-                    return cardapio.encontrarProduto(id);
+                    produtos.add(cardapio.encontrarProduto(id));
+                    break;
                 case 2:
                     System.out.println("Inform o id da bebida desejada");
                     System.out.println(cardapio.getListaProdutos(Categoria.Bebida));
                     id = leitura.nextInt();
-                    return cardapio.encontrarProduto(id);
+                    produtos.add(cardapio.encontrarProduto(id));
+                    break;
                 case 3:
                     sair = false;
                     break;
@@ -105,24 +112,7 @@ public class Main {
                     break;
             }
         }
-        return null;
+        return (new ItensPedido(nome,produtos));
     }
 
-  /*  private static void mostrarSanduiches(Sanduiche s1, Sanduiche s2, Sanduiche s3, Sanduiche s4) {
-        System.out.println("*SANDUÍCHES*");
-        System.out.println("7. " + s1.getNome() + "------------ R$ " + s1.getValor());
-        System.out.println("8. " + s2.getNome() + "------------ R$ " + s2.getValor());
-        System.out.println("9. " + s3.getNome() + "------------ R$ " + s3.getValor());
-        System.out.println("10. " + s4.getNome() + "------------ R$ " + s4.getValor());
-    }*/
-
-  /*  private static void mostrarBebidas(Bebida b1, Bebida b2, Bebida b3, Bebida b4, Bebida b5, Bebida b6) {
-        System.out.println("*BEBIDAS*");
-        System.out.println("1. " + b1.getNome() + "------------ R$ " + b1.getValor());
-        System.out.println("2. " + b2.getNome() + "------------ R$ " + b2.getValor());
-        System.out.println("3. " + b3.getNome() + "------------ R$ " + b3.getValor());
-        System.out.println("4. " + b4.getNome() + "------------ R$ " + b4.getValor());
-        System.out.println("5. " + b5.getNome() + "------------ R$ " + b5.getValor());
-        System.out.println("6. " + b6.getNome() + "------------ R$ " + b6.getValor());
-    }*/
 }
