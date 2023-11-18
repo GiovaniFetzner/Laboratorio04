@@ -1,6 +1,8 @@
 public class Produto {
     private String nome;
     private double valor;
+    private int id;
+    private Categoria categoria;
 
     public Produto(String nome, double valor, int id, Categoria categoria) {
         this.nome = nome;
@@ -12,7 +14,6 @@ public class Produto {
     public void setValor(double valor) {
         this.valor = valor;
     }
-
     public int getId() {
         return id;
     }
@@ -20,9 +21,6 @@ public class Produto {
     public void setId(int id) {
         this.id = id;
     }
-    private int id;
-
-    private Categoria categoria;
 
     public String getNome() {
         return nome;
@@ -50,9 +48,9 @@ public class Produto {
 
     @Override
     public String toString() {
-        return
+        return  "Id: "+
                 id + "  " +
-                nome + '\'' +
-                ", valor R$ " + valor;
+                nome +
+                "/ valor R$ " + valor;
     }
 }

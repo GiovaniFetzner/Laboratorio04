@@ -3,8 +3,6 @@ import java.util.ArrayList;
 public class Cardapio {
     private ArrayList<Produto> produtos;
 
-    private double total;
-
     public  Cardapio(){ // Construtor padrão com produtos pré-estabelecidos
         produtos = new ArrayList<Produto>();
         produtos.add(new Produto("Coca-Cola Zero",3.50,01, Categoria.Bebida));
@@ -20,18 +18,6 @@ public class Cardapio {
         produtos.add(new Produto("Vegano",50.99,23, Categoria.Sanduiche));
     }
 
-    public Cardapio(ArrayList<Produto> produtos) {
-        this.produtos = produtos;
-    }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
-    }
-
     public ArrayList<Produto> getListaProdutos(Categoria categoria) {
         ArrayList<Produto> lista = new ArrayList<>();
         for (Produto produto: produtos){
@@ -42,13 +28,6 @@ public class Cardapio {
         return lista;
     }
 
-    public double total(){
-        total = 0;
-        for (Produto produto: produtos) {
-            total += produto.getValor();
-        }
-        return total;
-    }
 
     public Produto encontrarProduto(int id){
         for (Produto produto: produtos)
@@ -58,7 +37,4 @@ public class Cardapio {
         return null;
     }
 
-    public ArrayList<Produto> getProdutos() {
-        return produtos;
-    }
 }

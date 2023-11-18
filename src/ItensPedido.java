@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 
 public class ItensPedido {
-    String nome;
-    ArrayList<Produto> produtos ;
+    private String nome;
+    private ArrayList<Produto> produtos;
+    private double total;
 
     public ItensPedido(String nome, ArrayList<Produto> produtos) {
         this.nome = nome;
@@ -25,14 +26,22 @@ public class ItensPedido {
         this.produtos = produtos;
     }
 
-  /* public Produto pedido(Produto produto){
-        Cardapio cardapio = new Cardapio();
-       for (Produto produto1: cardapio.getProdutos()) {
-           if (produto == produto1){
-               return produto;
-           }
-       }
-        return null;
-    }*/
+    public double getTotal() {
+        total =0;
+        for (Produto produto: produtos) {
+            total += produto.getValor();
+        }
+        return total;
+    }
 
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
+    @Override
+    public String toString() {
+        return "Nome: " + nome + '\'' +
+                ", produtos: " + produtos +
+                ", |total| R$ " + getTotal();
+    }
 }
