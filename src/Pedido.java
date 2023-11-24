@@ -39,7 +39,8 @@ public class Pedido {
             System.out.println("Nenhum pedido na lista até o momento");
             return false;
         }
-    }public boolean mostrarEntregas() {
+    }
+    public boolean mostrarEntregas() {
         for (int i = 0; i < ultimosPedidos.size(); i++) {
             System.out.println("Pedido " + (i+1));
             System.out.println(ultimosPedidos.get(i));

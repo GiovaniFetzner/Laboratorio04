@@ -18,6 +18,10 @@ public class Cardapio {
         produtos.add(new Produto("Vegano",50.99,23, Categoria.Sanduiche));
     }
 
+    public Cardapio(ArrayList<Produto> produtos) {
+        this.produtos = produtos;
+    }
+
     public ArrayList<Produto> getListaProdutos(Categoria categoria) {
         ArrayList<Produto> lista = new ArrayList<>();
         for (Produto produto: produtos){
