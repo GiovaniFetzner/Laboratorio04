@@ -19,6 +19,14 @@ public class Pedido {
         this.itensPedidos = itensPedidos;
     }
 
+    public LinkedList<ItensPedido> getUltimosPedidos() {
+        return ultimosPedidos;
+    }
+
+    public void setUltimosPedidos(LinkedList<ItensPedido> ultimosPedidos) {
+        this.ultimosPedidos = ultimosPedidos;
+    }
+
     public boolean entregarPedido(){
         if (itensPedidos.isEmpty()){
             System.out.println("Nenhum pedido na lista até o momento");
@@ -45,6 +53,7 @@ public class Pedido {
             System.out.println("Pedido " + (i+1));
             System.out.println(ultimosPedidos.get(i));
         }
+        //if (!ultimosPedidos.isEmpty()) return true;
         if (!ultimosPedidos.isEmpty()) return true;
         else{
             System.out.println("Nenhum pedido entregue até o momento");
@@ -52,7 +61,7 @@ public class Pedido {
         }
     }
 
-    public boolean subMenuPedidos(Cardapio cardapio) {
+    public void subMenuPedidos(Cardapio cardapio) {
         ArrayList<Produto> produtos = new ArrayList<>();
         Scanner leitura = new Scanner(System.in);
         int id;
@@ -89,8 +98,7 @@ public class Pedido {
         }
         if (!produtos.isEmpty()){
            itensPedidos.add(new ItensPedido(nome,produtos));
-           return true;
         }
-        return false;
+
     }
 }

@@ -37,7 +37,6 @@ public class Main {
                     break;
                 case 4: //Entregar
                     pedidos.entregarPedido();
-                    //pedidos.mostrarFila();
                     break;
                 case 5: //Últimas Entregas
                     pedidos.mostrarEntregas();

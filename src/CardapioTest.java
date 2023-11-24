@@ -17,10 +17,13 @@ class CardapioTest {
         cardapio = new Cardapio(produtos);
     }
     @Test
-    void getListaProdutos() {
+    void getListaProdutosBebidas() {
         ArrayList<Produto> listaBebidas = cardapio.getListaProdutos(Categoria.Bebida);
         assertTrue(listaBebidas.contains(bebida));
         assertFalse(listaBebidas.contains(sanduiche));
+    }
+    @Test
+    void getListaProdutosSanduiches() {
         ArrayList<Produto> listaSanduiches = cardapio.getListaProdutos(Categoria.Sanduiche);
         assertTrue(listaSanduiches.contains(sanduiche));
         assertFalse(listaSanduiches.contains(bebida));
